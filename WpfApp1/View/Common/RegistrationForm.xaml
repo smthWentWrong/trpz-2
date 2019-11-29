@@ -1,0 +1,99 @@
+﻿<Window x:Class="WpfApp1.Model.Entities.RegistrationForm"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+        xmlns:local="clr-namespace:WpfApp1.Model.Entities.ViewModel"
+        xmlns:pb="clr-namespace:Microsoft.Expression.Prototyping.Behavior;assembly=Microsoft.Expression.Prototyping.Interactivity"
+        
+        mc:Ignorable="d"
+         
+        Width="531" Height="572">
+
+    <Grid x:Name="LayoutRoot" Background="#FFA2EEAE" Margin="0,0,-8,-2" Height="543" VerticalAlignment="Top">
+        <!--d:DataContext="{d:DesignInstance {x:Type local:LoginViewModel}}">-->
+        <Grid.RowDefinitions>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="33*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="34*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="38*"/>
+            <RowDefinition Height="35*"/>
+            <RowDefinition Height="60*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="31*"/>
+            <RowDefinition Height="45*"/>
+            <RowDefinition Height="51*"/>
+            <RowDefinition Height="0*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition Width="95*"/>
+            <ColumnDefinition Width="162*"/>
+            <ColumnDefinition Width="8*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock Margin="0,0,7,0" FontSize="13.333" TextWrapping="Wrap" Grid.Column="1" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="34"><Run Text="Ім'я"/><Run Text=":"/></TextBlock>
+        <TextBox Text="{Binding Path=Username}"  Grid.Column="2"  Name="_Name" Margin="1,0,56,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom" />
+
+        <TextBlock Margin="110,14,7,0" FontSize="13.333" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Height="26" VerticalAlignment="Top"><Run Text="Прізвище"/><Run Text=":"/></TextBlock>
+        <TextBox Text="{Binding Path=FirstUserName}" Name="FirstSurname" Margin="1,14,56,0" VerticalAlignment="Top" Height="24" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1"/>
+
+        <TextBlock Margin="135,11.4,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Left" Width="45" Grid.Column="1" Height="20" Grid.Row="2" Text="Стать:"/>
+        <ComboBox  ItemsSource="{Binding Genders}" SelectedItem="{Binding Gender}" Margin="0.8,15.4,129.8,0" VerticalAlignment="Top" Height="16"  Grid.Column="2" Grid.Row="2" RenderTransformOrigin="0.507,0.5"/>
+
+        <TextBlock Margin="80,5,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Left" Width="100" Grid.Column="1" Height="20" Grid.Row="3"><Run Text="Сімейний стан"/><Run Text=":"/></TextBlock>
+        <RadioButton  Name="NoMarried" Margin="0,5,0,0" VerticalAlignment="Top" Content="неодружений(незаміжня)" Grid.Column="2" HorizontalAlignment="Right" Width="168" Height="14" Grid.Row="3"/>
+        <RadioButton IsChecked="{Binding Path=IsMArried}" Name ="Married" Margin="0,5,168,0" VerticalAlignment="Top" Content="одружений(заміжня)" Grid.Column="2" Height="14" Grid.Row="3"/>
+
+        <TextBlock  Margin="38,2,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Ідентифікаційний код:" HorizontalAlignment="Left" Width="146" Grid.Column="1" Height="20" Grid.Row="4"/>
+        <TextBox Text="{Binding Path=IdentificationCode}" Name="Identification_code" Margin="1,0,56,0" VerticalAlignment="Top" Height="24" TextWrapping="Wrap" Grid.Column="2" Grid.Row="4"/>
+
+        <TextBlock Margin="119,0,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Left" Width="60" Grid.Column="1" Height="20" Grid.Row="5"><Run Text="Паспорт"/><Run Text=":"/></TextBlock>
+        <TextBox Text="{Binding Path=Passport}" Name="Passport" Margin="1,0,56,0" TextWrapping="Wrap" Grid.Column="2" 
+                 VerticalAlignment="Top" Height="24" SpellCheck.IsEnabled="True" Language="ru-ru" Grid.Row="5"/>
+
+        <TextBlock Margin="63,0,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Left" Width="116" Grid.Column="1" Height="20" Grid.Row="6"><Run Text="Дата народже"/><Run Text="н"/><Run Text="ня:"/></TextBlock>
+        <TextBox Text="{Binding Path=Birthday}" Name="Birthday" Margin="1,0,56,0" TextWrapping="Wrap" Grid.Column="2" VerticalAlignment="Top" Height="24" Grid.Row="6"/>
+
+        <TextBlock Margin="58,0,0,0" VerticalAlignment="Top" FontSize="18.667" TextWrapping="Wrap" HorizontalAlignment="Left" Width="122" Grid.Column="1" Height="20" Grid.Row="7"><Run FontSize="13.333" Text="Контактний номер"/><Run FontSize="13.333" Text=":"/></TextBlock>
+        <TextBox Text="{Binding Path=Telephone}" Name="Telephone" Margin="1,0,56,0" TextWrapping="Wrap" Grid.Column="2" Height="26" VerticalAlignment="Top" Grid.Row="7"/>
+
+        <TextBlock Margin="135,0,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="E-mail:" HorizontalAlignment="Left" Width="45" Grid.Column="1" Height="20" Grid.Row="8"/>
+        <TextBox Text="{Binding Path=Email}"  Name="Email" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Margin="1,0,56,0" Grid.Row="8" Grid.Column="2"/>
+
+        <TextBlock Margin="47,2,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Адреса проживання:" HorizontalAlignment="Left" Width="133" Grid.Column="1" Height="20" Grid.Row="9"/>
+
+        <RichTextBox DataContext="{Binding Path=Address,Mode=OneWayToSource}" Margin="1,2,56,0" VerticalAlignment="Top" Grid.Column="2" Height="50" MinWidth="0" Grid.Row="9" >
+            <FlowDocument FontWeight="Black">
+            </FlowDocument>
+        </RichTextBox>
+
+        <Button Margin="75,0,0,10" Content="Створити акаунт" HorizontalAlignment="Left" Width="128" Grid.Column="1"  Grid.Row="13" Grid.ColumnSpan="2">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding CreateAccountCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+        <Button Margin="0,0,51,10" Content="Відмінити" HorizontalAlignment="Right" Width="128" Grid.Column="2"  Grid.Row="13">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="Click">
+                    <i:InvokeCommandAction Command="{Binding ToLoginPageCommand}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </Button>
+
+        <TextBlock Margin="126,2,0,0" VerticalAlignment="Top" FontSize="14.667" TextWrapping="Wrap" Grid.Column="1" HorizontalAlignment="Left" Width="54" Height="22" Grid.Row="11"><Run FontSize="13.333" Text="Пароль"/><Run Text=":"/></TextBlock>
+        <TextBlock Margin="63,4,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Grid.Column="1" HorizontalAlignment="Left" Width="116" Height="20" Grid.Row="12"><Run Text="Повторіть пароль"/><Run Text=":"/></TextBlock>
+        <PasswordBox Margin="1,0,56,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="11"/>
+        <PasswordBox Margin="1,0,56,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="12"/>
+        <TextBlock Margin="135,1,0,0" VerticalAlignment="Top" FontSize="14.667" TextWrapping="Wrap" Grid.Column="1" HorizontalAlignment="Left" Width="54" Height="22" Grid.Row="10"><Run FontSize="13.333" Text="Логін"/><Run Text=":"/></TextBlock>
+        <PasswordBox Margin="0,0,57,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="10"/>
+        
+
+    </Grid>
+</Window>

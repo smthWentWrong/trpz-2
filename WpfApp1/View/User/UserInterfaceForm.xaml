@@ -1,0 +1,42 @@
+﻿<Window x:Class="WpfApp1.Model.Entities.UserPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Model.Entities"
+        mc:Ignorable="d"
+        Title="UserInterface" 
+        Height="450" Width="650">
+    <Grid x:Name="LayoutRoot" Background="#FFA2EEAE" HorizontalAlignment="Left" Width="642">
+        <TextBlock HorizontalAlignment="Left" Margin="104,24.983,0,0" VerticalAlignment="Top" Width="280.933" FontSize="29.333" TextWrapping="Wrap"><Run Text="І"/><Run Text="ванов Іван Іванович"/></TextBlock>
+        <ListBox HorizontalAlignment="Left" Margin="16,88,0,96" Width="224"/>
+        <Button HorizontalAlignment="Right" Margin="0,18.04,32,0" VerticalAlignment="Top" Width="112" Content="Змінити пароль">
+            
+        </Button>
+        <Button HorizontalAlignment="Right" Margin="0,18.04,152,0" VerticalAlignment="Top" Width="75" Content="Вийти" Click="OnClickToMainWindow">
+            
+        </Button>
+        <TextBlock Margin="255.808,126.266,240.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Ідентифікаційний код:" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock Margin="0,160,248.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="56" d:LayoutOverrides="VerticalAlignment"><Run Text="Паспорт"/><Run Text=":"/></TextBlock>
+        <TextBlock Margin="279.808,192,240.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" d:LayoutOverrides="VerticalAlignment"><Run Text="Дата народже"/><Run Text="н"/><Run Text="ня:"/></TextBlock>
+        <TextBlock Margin="271.904,222.266,240,0" VerticalAlignment="Top" FontSize="18.667" TextWrapping="Wrap" d:LayoutOverrides="VerticalAlignment"><Run FontSize="13.333" Text="Контактний номер"/><Run FontSize="13.333" Text=":"/></TextBlock>
+        <TextBlock Margin="0,254.266,252.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="E-mail:" HorizontalAlignment="Right" Width="40"/>
+        <TextBlock Margin="263.904,297.29,240,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Адреса проживання:"/>
+        <TextBlock Margin="296,94.266,247.904,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap"><Run Text="Сімейний стан"/><Run Text=":"/></TextBlock>
+        <TextBlock Margin="0,126.266,63.904,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="144.096" Text="3457870896543" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock Margin="0,160,128,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="80" d:LayoutOverrides="VerticalAlignment"><Run Text="КП 7453"/><Run Text="0"/></TextBlock>
+        <TextBlock Margin="0,192,87.904,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="120.096" Text="13.05.1986" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock Margin="0,222.266,79.904,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="128.096" Height="17.734" Text="+380678567921" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock Margin="0,254.266,72,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="supppert@gmail.com" HorizontalAlignment="Right" Width="136"/>
+        <TextBlock Margin="0,297.066,72,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="136"><Run Text="м.Львів, Дрогобицький р"/><Run Text="-"/><Run Text="н"/><Run Text=","/><LineBreak/><Run Text="см"/><Run Text="т"/><Run Text=".Р"/><Run Text="ів, "/><LineBreak/><Run Text="вул. Народна,буд"/><Run Text="."/><Run Text="7"/></TextBlock>
+        <TextBlock Margin="0,94.266,111.904,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="96.096" Text="неодружений"/>
+        <Button HorizontalAlignment="Left" Margin="16,0,0,40" VerticalAlignment="Bottom" Width="224" Content="Переглянути інформацію про майно">
+           
+        </Button>
+        <Label HorizontalAlignment="Left" Margin="80.306,96,0,0" VerticalAlignment="Top" Content="Список майна"/>
+        <TextBlock HorizontalAlignment="Left" Margin="104,24.983,0,0" VerticalAlignment="Top" Width="280.933" FontSize="29.333" TextWrapping="Wrap">
+            <Run Text="Іванов Іван Іванович"/>
+        </TextBlock>
+
+    </Grid>
+</Window>

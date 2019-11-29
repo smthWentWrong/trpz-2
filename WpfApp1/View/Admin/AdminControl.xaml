@@ -1,0 +1,28 @@
+﻿<UserControl x:Class="WpfApp1.Model.Entities.View.Admin.AdminControl"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:WpfApp1.Model.Entities.View.Admin"
+             mc:Ignorable="d"  
+             xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity" 
+            xmlns:pb="clr-namespace:Microsoft.Expression.Prototyping.Behavior;assembly=Microsoft.Expression.Prototyping.Interactivity"
+  
+             d:DesignHeight="375" d:DesignWidth="640">
+    <Grid Background="#FFA2EEAE">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <ListBox Margin="40,104,40,48" Grid.ColumnSpan="2"/>
+        <TextBox HorizontalAlignment="Left" Margin="40,56,0,0" VerticalAlignment="Top" Width="248" Height="30" TextWrapping="Wrap"/>
+        <Button Margin="1,56,269,0" VerticalAlignment="Top" Height="30" Content="Пошук " Grid.Column="1"/>
+        <Button Margin="0,18,40,0" VerticalAlignment="Top" Height="30" Content="Створити новий акаунт" HorizontalAlignment="Right" Width="216" Grid.Column="1">
+            
+        </Button>
+        <Button Margin="0,56,40,0" VerticalAlignment="Top" Height="30" Content="Переглянути інформацію по акаунту" HorizontalAlignment="Right" Width="216" Grid.Column="1">
+            
+        </Button>
+        <TextBlock Margin="264,128,0,0" VerticalAlignment="Top" FontSize="13.333" Text="Список осіб" TextWrapping="Wrap" Height="18"/>
+    </Grid>
+</UserControl>
