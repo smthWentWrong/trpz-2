@@ -1,4 +1,4 @@
-﻿using SQLite;
+﻿
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -15,7 +15,7 @@ namespace WpfApp1.Model.Entities.Model.Entities
         public string PlaceRegistration { get; set; }
         public string PurchaseDate { get; set; }
         
-        public int BuildID { get; set; }
-        public Build Build { get; set; }
+        
+        
     }
 }

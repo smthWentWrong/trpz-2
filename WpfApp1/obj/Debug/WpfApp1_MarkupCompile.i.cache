@@ -4,17 +4,17 @@
 winexe
 C#
 .cs
-D:\Source\trpz-2\WpfApp1\obj\Debug\
+D:\Source\trpz-v2\WpfApp1\obj\Debug\
 WpfApp1
 none
 false
 DEBUG;TRACE
-D:\Source\trpz-2\WpfApp1\App.xaml
-9-1689649264
-2-279442740
-38707538655
-78293578633
-Login.xaml;Resources\Styles.xaml;Resources\Templates.xaml;View\Admin\AdminControl.xaml;View\Admin\AdminPage.xaml;View\Common\RecoveryPasswordForm.xaml;View\Common\RegistrationForm.xaml;View\Common\ThatAccountExistForm.xaml;View\User\UserInterfaceForm.xaml;
+D:\Source\trpz-v2\WpfApp1\App.xaml
+81151724774
+
+51-1533433335
+20269382433
+LoginView.xaml;Resources\Styles.xaml;Resources\Templates.xaml;View\Admin\AdminControl.xaml;View\Admin\AdminPage.xaml;View\Common\RecoveryPasswordForm.xaml;View\Common\RegistrationForm.xaml;View\User\UserPage.xaml;
 
 False
 

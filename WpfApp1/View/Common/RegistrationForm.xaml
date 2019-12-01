@@ -37,17 +37,16 @@
             <ColumnDefinition Width="8*"/>
         </Grid.ColumnDefinitions>
         <TextBlock Margin="0,0,7,0" FontSize="13.333" TextWrapping="Wrap" Grid.Column="1" Height="17" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="34"><Run Text="Ім'я"/><Run Text=":"/></TextBlock>
-        <TextBox Text="{Binding Path=Username}"  Grid.Column="2"  Name="_Name" Margin="1,0,56,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom" />
+        <TextBox Name="addFirstName" Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"  Grid.Column="2" Margin="1,0,56,0" TextWrapping="Wrap" Height="23" VerticalAlignment="Bottom" />
 
         <TextBlock Margin="110,14,7,0" FontSize="13.333" TextWrapping="Wrap" Grid.Column="1" Grid.Row="1" Height="26" VerticalAlignment="Top"><Run Text="Прізвище"/><Run Text=":"/></TextBlock>
-        <TextBox Text="{Binding Path=FirstUserName}" Name="FirstSurname" Margin="1,14,56,0" VerticalAlignment="Top" Height="24" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1"/>
+        <TextBox Text="{Binding SurName}" Name="FirstSurname" Margin="1,14,56,0" VerticalAlignment="Top" Height="24" TextWrapping="Wrap" Grid.Column="2" Grid.Row="1"/>
 
         <TextBlock Margin="135,11.4,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Left" Width="45" Grid.Column="1" Height="20" Grid.Row="2" Text="Стать:"/>
-        <ComboBox  ItemsSource="{Binding Genders}" SelectedItem="{Binding Gender}" Margin="0.8,15.4,129.8,0" VerticalAlignment="Top" Height="16"  Grid.Column="2" Grid.Row="2" RenderTransformOrigin="0.507,0.5"/>
-
+        <ComboBox  ItemsSource="{Binding Genders}" SelectedItem="{Binding AddGender}" Margin="0.8,10.4,129.8,0" VerticalAlignment="Top" Height="21"  Grid.Column="2" Grid.Row="2" RenderTransformOrigin="0.507,0.5"/>
+        <ComboBox  ItemsSource="{Binding Status}" SelectedItem="{Binding AddStatus}" Margin="0.8,2,129.8,0" VerticalAlignment="Top" Height="21"  Grid.Column="2" Grid.Row="3" RenderTransformOrigin="0.507,0.5"/>
+        
         <TextBlock Margin="80,5,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Left" Width="100" Grid.Column="1" Height="20" Grid.Row="3"><Run Text="Сімейний стан"/><Run Text=":"/></TextBlock>
-        <RadioButton  Name="NoMarried" Margin="0,5,0,0" VerticalAlignment="Top" Content="неодружений(незаміжня)" Grid.Column="2" HorizontalAlignment="Right" Width="168" Height="14" Grid.Row="3"/>
-        <RadioButton IsChecked="{Binding Path=IsMArried}" Name ="Married" Margin="0,5,168,0" VerticalAlignment="Top" Content="одружений(заміжня)" Grid.Column="2" Height="14" Grid.Row="3"/>
 
         <TextBlock  Margin="38,2,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Ідентифікаційний код:" HorizontalAlignment="Left" Width="146" Grid.Column="1" Height="20" Grid.Row="4"/>
         <TextBox Text="{Binding Path=IdentificationCode}" Name="Identification_code" Margin="1,0,56,0" VerticalAlignment="Top" Height="24" TextWrapping="Wrap" Grid.Column="2" Grid.Row="4"/>
@@ -57,18 +56,21 @@
                  VerticalAlignment="Top" Height="24" SpellCheck.IsEnabled="True" Language="ru-ru" Grid.Row="5"/>
 
         <TextBlock Margin="63,0,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Left" Width="116" Grid.Column="1" Height="20" Grid.Row="6"><Run Text="Дата народже"/><Run Text="н"/><Run Text="ня:"/></TextBlock>
-        <TextBox Text="{Binding Path=Birthday}" Name="Birthday" Margin="1,0,56,0" TextWrapping="Wrap" Grid.Column="2" VerticalAlignment="Top" Height="24" Grid.Row="6"/>
+        <TextBox Text="{Binding DateOfBirthday}" Name="Birthday" Margin="1,0,56,0" TextWrapping="Wrap" Grid.Column="2" VerticalAlignment="Top" Height="24" Grid.Row="6"/>
 
         <TextBlock Margin="58,0,0,0" VerticalAlignment="Top" FontSize="18.667" TextWrapping="Wrap" HorizontalAlignment="Left" Width="122" Grid.Column="1" Height="20" Grid.Row="7"><Run FontSize="13.333" Text="Контактний номер"/><Run FontSize="13.333" Text=":"/></TextBlock>
-        <TextBox Text="{Binding Path=Telephone}" Name="Telephone" Margin="1,0,56,0" TextWrapping="Wrap" Grid.Column="2" Height="26" VerticalAlignment="Top" Grid.Row="7"/>
+        <TextBox Text="{Binding Telephone}" Name="Telephone" Margin="1,0,56,0" TextWrapping="Wrap" Grid.Column="2" Height="26" VerticalAlignment="Top" Grid.Row="7"/>
 
         <TextBlock Margin="135,0,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="E-mail:" HorizontalAlignment="Left" Width="45" Grid.Column="1" Height="20" Grid.Row="8"/>
-        <TextBox Text="{Binding Path=Email}"  Name="Email" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Margin="1,0,56,0" Grid.Row="8" Grid.Column="2"/>
+        <TextBox Text="{Binding Email}"  Name="Email" TextWrapping="Wrap" VerticalAlignment="Top" Height="24" Margin="1,0,56,0" Grid.Row="8" Grid.Column="2"/>
 
         <TextBlock Margin="47,2,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Адреса проживання:" HorizontalAlignment="Left" Width="133" Grid.Column="1" Height="20" Grid.Row="9"/>
 
-        <RichTextBox DataContext="{Binding Path=Address,Mode=OneWayToSource}" Margin="1,2,56,0" VerticalAlignment="Top" Grid.Column="2" Height="50" MinWidth="0" Grid.Row="9" >
-            <FlowDocument FontWeight="Black">
+        <RichTextBox  Margin="1,2,56,0" VerticalAlignment="Top" Grid.Column="2" Height="50" MinWidth="0" Grid.Row="9" >
+            <FlowDocument PageHeight="180">
+                <Paragraph>
+                    <Run Text="{Binding Address, Mode=TwoWay}"/>
+                </Paragraph>
             </FlowDocument>
         </RichTextBox>
 
@@ -86,14 +88,28 @@
                 </i:EventTrigger>
             </i:Interaction.Triggers>
         </Button>
+        <TextBlock Margin="135,1,0,0" VerticalAlignment="Top" FontSize="14.667" TextWrapping="Wrap" Grid.Column="1" HorizontalAlignment="Left" Width="54" Height="22" Grid.Row="10"><Run FontSize="13.333" Text="Логін"/><Run Text=":"/></TextBlock>
+        <TextBox Text="{Binding Login,UpdateSourceTrigger=PropertyChanged,ValidatesOnExceptions=True}" Margin="0,0,57,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="10"/>
 
         <TextBlock Margin="126,2,0,0" VerticalAlignment="Top" FontSize="14.667" TextWrapping="Wrap" Grid.Column="1" HorizontalAlignment="Left" Width="54" Height="22" Grid.Row="11"><Run FontSize="13.333" Text="Пароль"/><Run Text=":"/></TextBlock>
         <TextBlock Margin="63,4,0,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Grid.Column="1" HorizontalAlignment="Left" Width="116" Height="20" Grid.Row="12"><Run Text="Повторіть пароль"/><Run Text=":"/></TextBlock>
-        <PasswordBox Margin="1,0,56,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="11"/>
-        <PasswordBox Margin="1,0,56,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="12"/>
-        <TextBlock Margin="135,1,0,0" VerticalAlignment="Top" FontSize="14.667" TextWrapping="Wrap" Grid.Column="1" HorizontalAlignment="Left" Width="54" Height="22" Grid.Row="10"><Run FontSize="13.333" Text="Логін"/><Run Text=":"/></TextBlock>
-        <PasswordBox Margin="0,0,57,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="10"/>
+        <PasswordBox Name="password1" Margin="1,0,56,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="11">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PasswordChanged">
+                    <i:InvokeCommandAction Command="{Binding PasswordChangedCommand}"
+                                               CommandParameter="{Binding ElementName=password1, Mode=OneWay}"/>
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </PasswordBox>
+        <PasswordBox Name="password2" Margin="1,0,56,0" VerticalAlignment="Top" Height="24" Grid.Column="2" Grid.Row="12">
+            <i:Interaction.Triggers>
+                <i:EventTrigger EventName="PasswordChanged">
+                    <i:InvokeCommandAction />
+                </i:EventTrigger>
+            </i:Interaction.Triggers>
+        </PasswordBox>
         
+
 
     </Grid>
 </Window>

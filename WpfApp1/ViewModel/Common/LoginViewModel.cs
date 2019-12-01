@@ -7,6 +7,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Media;
+using System.Windows.Media.Animation;
 using WpfApp1.Model.Entities.Model.Context;
 using WpfApp1.Model.Entities.Model.DALInterfaces;
 using WpfApp1.Model.Entities.Model.Entities;
@@ -48,7 +50,7 @@ namespace WpfApp1.Model.Entities.ViewModel
                 OnPropertyChanged("Password");
             }
         }
-        
+
         public RelayCommand LoginCommand
         {
             get
@@ -59,8 +61,12 @@ namespace WpfApp1.Model.Entities.ViewModel
                         using (MainContext mainContext = new MainContext())
                         {
                             var userRepository = new UserRepository(mainContext);
-                            
-                            WpfApp1.Model.Entities.User user = userRepository.List(u => (u.Login == Login && u.Password==Password)).FirstOrDefault();
+
+                            WpfApp1.Model.Entities.User user =
+                                userRepository
+                                    .List(u => (u.Login == Login && u.Password == Password))
+                                    .FirstOrDefault();
+
                             if (user == null)
                             {
                                 MessageBox.Show("There is no such user!");
@@ -69,22 +75,22 @@ namespace WpfApp1.Model.Entities.ViewModel
                             {
                                 if (user.Admin)
                                 {
+                                    ApplicationContext.CurrentUser = user;
                                     AdminPage adminView = new AdminPage();
                                     adminView.Show();
                                 }
                                 else
                                 {
+                                    ApplicationContext.CurrentUser = user;
                                     UserPage userPage = new UserPage();
                                     userPage.Show();
                                 }
 
-
-                                
                                 mainContext.SaveChanges();
-                                
+
                                 ClosingRequest?.Invoke(this, EventArgs.Empty);
                             }
-                            }
+                        }
                     }
                     ));
 
@@ -109,7 +115,7 @@ namespace WpfApp1.Model.Entities.ViewModel
             get
             {
                 return _openRegistrationPageCommand ??
-                    (_openRegistrationPageCommand = new RelayCommand(obj=>
+                    (_openRegistrationPageCommand = new RelayCommand(obj =>
                     {
                         RegistrationForm registration = new RegistrationForm();
                         registration.Show();
@@ -130,6 +136,10 @@ namespace WpfApp1.Model.Entities.ViewModel
         }
 
 
+        public LoginViewModel()
+        {
+
+        }
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName]string prop = "")
@@ -139,5 +149,5 @@ namespace WpfApp1.Model.Entities.ViewModel
         }
     }
 
-    
+
 }

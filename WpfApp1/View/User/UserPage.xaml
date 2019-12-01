@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfApp1.Model.Entities.UserPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfApp1.Model.Entities"
+        mc:Ignorable="d"
+        Title="UserInterface" 
+        Height="450" Width="650">
+    <Grid x:Name="LayoutRoot" Background="#FFA2EEAE" HorizontalAlignment="Left" Width="642">
+        <ListBox HorizontalAlignment="Left" Margin="16,88,0,96" Width="224"/>
+        <Button HorizontalAlignment="Right" Margin="0,18.04,32,0" VerticalAlignment="Top" Width="112" Content="Змінити пароль">
+
+        </Button>
+        <Button Command="{Binding ExitToLoginPageCommand}" HorizontalAlignment="Right" Margin="0,18.04,152,0" VerticalAlignment="Top" Width="75" Content="Вийти" >
+
+        </Button>
+        <TextBlock Margin="255.808,126.266,240.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Ідентифікаційний код:" d:LayoutOverrides="VerticalAlignment"/>
+        <TextBlock Margin="0,160,248.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="56" d:LayoutOverrides="VerticalAlignment"><Run Text="Паспорт"/><Run Text=":"/></TextBlock>
+        <TextBlock Margin="279.808,192,240.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" d:LayoutOverrides="VerticalAlignment"><Run Text="Дата народже"/><Run Text="н"/><Run Text="ня:"/></TextBlock>
+        <TextBlock Margin="271.904,222.266,240,0" VerticalAlignment="Top" FontSize="18.667" TextWrapping="Wrap" d:LayoutOverrides="VerticalAlignment"><Run FontSize="13.333" Text="Контактний номер"/><Run FontSize="13.333" Text=":"/></TextBlock>
+        <TextBlock Margin="0,254.266,252.096,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="E-mail:" HorizontalAlignment="Right" Width="40"/>
+        <TextBlock Margin="263.904,297.29,240,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" Text="Адреса проживання:"/>
+        <TextBlock Margin="296,94.266,247.904,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap"><Run Text="Сімейний стан"/><Run Text=":"/></TextBlock>
+        <TextBlock Text="{Binding IdentificationCode}" Margin="0,126,32,0" VerticalAlignment="Top" FontSize="13.333"  HorizontalAlignment="Right" Width="176" Height="18"/>
+        <TextBlock  Text="{Binding Passport}" Margin="0,160,32,0" VerticalAlignment="Top" FontSize="13.333"  HorizontalAlignment="Right" Width="176" Height="18"/>
+        <TextBlock Text="{Binding DateOfBirthday}" Margin="0,192,32,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="176"/>
+        <TextBlock Text="{Binding Telephone}" Margin="0,222,32,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="176" Height="18"/>
+        <TextBlock Text="{Binding Email}" Margin="0,254,32,0" VerticalAlignment="Top" FontSize="13.333" TextWrapping="Wrap" HorizontalAlignment="Right" Width="176"/>
+        <TextBlock Text="{Binding Address}" Margin="0,288,54,0" VerticalAlignment="Top" FontSize="13.333"  HorizontalAlignment="Right" Width="154" Height="92">
+        </TextBlock>
+        <TextBlock Text="{Binding Status}" Margin="0,94,32,0" VerticalAlignment="Top" FontSize="13.333" HorizontalAlignment="Right" Width="176" Height="18" />
+        <Button HorizontalAlignment="Left" Margin="16,0,0,40" VerticalAlignment="Bottom" Width="224" Content="Переглянути інформацію про майно">
+
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Margin="109,18,0,0" VerticalAlignment="Top" Width="281" FontSize="29.333" TextWrapping="Wrap"
+             Text="{Binding UserFullName}">
+        </TextBlock>
+
+    </Grid>
+</Window>

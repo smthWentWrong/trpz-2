@@ -1,4 +1,4 @@
-﻿namespace WpfApp1.Model.Entities.Migrations
+﻿namespace WpfApp1.Migrations
 {
     using System;
     using System.Data.Entity;

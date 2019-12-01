@@ -18,11 +18,25 @@
     <Style x:Key="PasswordTextBoxAnimation" TargetType="PasswordBox">
         <Style.Triggers>
             <EventTrigger RoutedEvent="Button.Loaded">
-                <EventTrigger.Actions>
+                
                     <BeginStoryboard>
                         <Storyboard TargetProperty="Width">
                             <DoubleAnimation From="0" To="176"
                                 Duration="0:0:5"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+    <Style x:Key="TextBlockAnimation" TargetType="Label">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Loaded">
+                <EventTrigger.Actions>
+                    <BeginStoryboard>
+                        <Storyboard TargetProperty="Width">
+                            <DoubleAnimation From="0" To="610"
+                                Duration="0:0:5" />
                         </Storyboard>
                     </BeginStoryboard>
                 </EventTrigger.Actions>

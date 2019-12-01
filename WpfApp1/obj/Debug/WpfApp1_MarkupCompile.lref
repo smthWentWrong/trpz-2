@@ -1,12 +1,11 @@
 ﻿
 FD:\Source\trpz-v2\WpfApp1\App.xaml;;
-FD:\Source\trpz-v2\WpfApp1\Login.xaml;;
+FD:\Source\trpz-v2\WpfApp1\LoginView.xaml;;
 FD:\Source\trpz-v2\WpfApp1\Resources\Styles.xaml;;
 FD:\Source\trpz-v2\WpfApp1\Resources\Templates.xaml;;
 FD:\Source\trpz-v2\WpfApp1\View\Admin\AdminControl.xaml;;
 FD:\Source\trpz-v2\WpfApp1\View\Admin\AdminPage.xaml;;
 FD:\Source\trpz-v2\WpfApp1\View\Common\RecoveryPasswordForm.xaml;;
 FD:\Source\trpz-v2\WpfApp1\View\Common\RegistrationForm.xaml;;
-FD:\Source\trpz-v2\WpfApp1\View\Common\ThatAccountExistForm.xaml;;
-FD:\Source\trpz-v2\WpfApp1\View\User\UserInterfaceForm.xaml;;
+FD:\Source\trpz-v2\WpfApp1\View\User\UserPage.xaml;;
 

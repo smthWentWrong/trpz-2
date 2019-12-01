@@ -15,7 +15,7 @@ namespace WpfApp1.Model.Entities
 
         public bool Admin { get; set; }
 
-        public UserInformation userInformation { get; set; }
+        
 
         public User()
         {
